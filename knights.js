@@ -33,7 +33,11 @@ function knightMoves(start, end) {
     const { square, path } = queue.shift();
     const [x, y] = square;
     if (square[0] === end[0] && square[1] === end[1]) {
-      console.log(path);
+      console.log(`You made it in ${path.length - 1} moves! Here's your path:`);
+      for (let square of path) {
+        console.log(square);
+      }
+      // console.log(path);
       return path;
     }
 
@@ -51,8 +55,8 @@ function knightMoves(start, end) {
   return null;
 }
 
-let startPoint = [7, 1];
-let endPoint = [7, 1];
+let startPoint = [0, 0];
+let endPoint = [7, 0];
 
 knightMoves(startPoint, endPoint);
 
